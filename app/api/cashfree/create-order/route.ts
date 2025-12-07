@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { adminDb } from "@/lib/firebaseAdmin";
 
 export const dynamic = "force-dynamic";
@@ -31,7 +31,7 @@ type CashfreeLinkResponse = {
   [key: string]: any;
 };
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
@@ -70,7 +70,9 @@ export async function POST(req: Request) {
       bookingData?.phone ||
       bookingData?.userPhone ||
       ""
-    ).toString().trim();
+    )
+      .toString()
+      .trim();
 
     // Sirf digits rakho
     let digits = rawPhone.replace(/\D/g, "");
@@ -151,8 +153,11 @@ export async function POST(req: Request) {
       );
     }
 
+    // ✅ Domain dynamic:
+    // 1) NEXT_PUBLIC_SITE_URL agar set hai to use karo
+    // 2) warna current request origin (Vercel par ye tumhara live domain hoga)
     const siteUrl =
-      process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+      process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin;
 
     // 🔑 Payment Link ke liye unique link_id (max 50 chars)
     const rawLinkId = `AFIX_LINK_${bookingId}_${Date.now()}`;
