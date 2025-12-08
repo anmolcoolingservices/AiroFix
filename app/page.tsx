@@ -24,17 +24,19 @@ export default function HomePage() {
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <div className="relative h-10 w-10 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center overflow-hidden shadow-md">
-                {/* Logo image use karna ho to yahan:*/
-                <Image src="/airofix-logo.png" alt="AiroFix" fill className="object-contain p-1" />
-                }
-                <span className="text-[13px] font-bold tracking-tight">
+                {/* Logo image */}
+                <Image
+                  src="/airofix-logo.png"
+                  alt="AiroFix"
+                  fill
+                  className="object-contain p-1"
+                />
+                <span className="text-[13px] font-bold tracking-tight relative z-10">
                   AF
                 </span>
               </div>
               <div>
-                <p className="text-sm font-semibold tracking-tight">
-                  AiroFix
-                </p>
+                <p className="text-sm font-semibold tracking-tight">AiroFix</p>
                 <p className="text-[11px] text-slate-300">
                   AC & Electrician Services • Delhi NCR
                 </p>
@@ -70,21 +72,16 @@ export default function HomePage() {
               <div className="space-y-3">
                 <h1 className="text-[26px] sm:text-[32px] lg:text-[34px] font-semibold leading-snug tracking-tight">
                   Premium{" "}
-                  <span className="text-cyan-300 font-bold">
-                    AC service
-                  </span>{" "}
-                  &{" "}
-                  <span className="text-cyan-300 font-bold">
-                    electrician
-                  </span>{" "}
+                  <span className="text-cyan-300 font-bold">AC service</span> &{" "}
+                  <span className="text-cyan-300 font-bold">electrician</span>{" "}
                   on your schedule.
                 </h1>
 
                 <p className="text-[13px] sm:text-sm text-slate-300 max-w-xl">
                   10 AM – 6 PM time-slot booking, verified technicians, rate
-                  card inspired by Urban Company, but local Delhi NCR ke
-                  hisaab se pricing. App install ki zarurat nahi – mobile
-                  browser se hi poora flow complete.
+                  card inspired by Urban Company, but local Delhi NCR ke hisaab
+                  se pricing. App install ki zarurat nahi – mobile browser se hi
+                  poora flow complete.
                 </p>
               </div>
 
@@ -390,50 +387,6 @@ export default function HomePage() {
           </div>
         </section>
 
- {/* SEO JSON-LD schema for AiroFix */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "HomeAndConstructionBusiness",
-              name: "AiroFix AC & Electrician Services",
-              url: "https://airofix.com",
-              logo: "https://airofix.com/og-airofix.png",
-              image: "https://airofix.com/og-airofix.png",
-              description:
-                "AiroFix provides professional AC servicing, AC repair, electrician services, wiring, switchboard repair, fan installation, and home electrical work across Delhi NCR.",
-              telephone: "+918851543700",
-              areaServed: [
-                "Delhi",
-                "Noida",
-                "Gurgaon",
-                "Ghaziabad",
-                "Faridabad"
-              ],
-              openingHours: "Mo-Su 10:00-18:00",
-              priceRange: "₹₹",
-              serviceType: [
-                "AC Service",
-                "AC Repair",
-                "AC Installation",
-                "AC Gas Refill",
-                "Electrician Service",
-                "Electrical Wiring",
-                "Switchboard Repair",
-                "Fan Installation",
-                "Light Fitting",
-                "MCB & Fuse Repair"
-              ],
-              sameAs: [
-                "https://facebook.com/airofix",
-                "https://instagram.com/airofix"
-              ]
-            }),
-          }}
-        />
-      </main>
-
         {/* FINAL CTA */}
         <section className="max-w-6xl mx-auto px-4 pb-7">
           <div
@@ -504,10 +457,7 @@ export default function HomePage() {
 
       {/* HIDDEN ADMIN LINK – sirf desktop, low opacity */}
       <div className="hidden md:block text-[9px] text-center text-slate-400 pb-1 pt-1">
-        <Link
-          href="/admin"
-          className="opacity-30 hover:opacity-80 transition"
-        >
+        <Link href="/admin" className="opacity-30 hover:opacity-80 transition">
           Admin
         </Link>
       </div>
@@ -597,9 +547,7 @@ function AnimatedPhoneStepCard({
         {/* screen */}
         <div className="relative z-0 h-full w-full bg-slate-50 flex flex-col pt-6 pb-3 px-3">
           <div className="mb-2">
-            <p className="text-[9px] font-semibold text-blue-600">
-              {step}
-            </p>
+            <p className="text-[9px] font-semibold text-blue-600">{step}</p>
             <p className="text-[11px] font-semibold text-slate-900">
               {title}
             </p>
@@ -652,9 +600,7 @@ function ServiceCard({ title, subtitle, badge, price }: ServiceCardProps) {
     >
       <div>
         <div className="flex items-center justify-between gap-1">
-          <p className="text-[12px] font-semibold text-slate-900">
-            {title}
-          </p>
+          <p className="text-[12px] font-semibold text-slate-900">{title}</p>
           {badge && (
             <span className="text-[9px] px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
               {badge}
@@ -687,9 +633,7 @@ function StepCard({ icon, title, desc }: StepCardProps) {
         {icon}
       </div>
       <div>
-        <p className="text-[12px] font-semibold text-slate-900">
-          {title}
-        </p>
+        <p className="text-[12px] font-semibold text-slate-900">{title}</p>
         <p className="text-[11px] text-slate-600 mt-0.5">{desc}</p>
       </div>
     </div>
@@ -704,9 +648,7 @@ type InfoCardProps = {
 function InfoCard({ title, desc }: InfoCardProps) {
   return (
     <div className="rounded-2xl bg-white border border-slate-200 p-3">
-      <p className="text-[12px] font-semibold text-slate-900 mb-1">
-        {title}
-      </p>
+      <p className="text-[12px] font-semibold text-slate-900 mb-1">{title}</p>
       <p className="text-[11px] text-slate-600">{desc}</p>
     </div>
   );
@@ -722,9 +664,7 @@ function RateRow({ label, details, price }: RateRowProps) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2 flex items-start justify-between gap-2">
       <div>
-        <p className="text-[11px] font-semibold text-slate-900">
-          {label}
-        </p>
+        <p className="text-[11px] font-semibold text-slate-900">{label}</p>
         <p className="text-[10px] text-slate-600 mt-0.5">{details}</p>
       </div>
       <p className="text-[11px] font-semibold text-blue-700 whitespace-nowrap">
@@ -745,9 +685,7 @@ function TestimonialCard({ name, text, rating }: TestimonialProps) {
     <div className="rounded-2xl bg-white border border-slate-200 p-3 flex flex-col justify-between">
       <p className="text-[11px] text-slate-600">“{text}”</p>
       <div className="mt-2 flex items-center justify-between">
-        <p className="text-[11px] font-semibold text-slate-900">
-          {name}
-        </p>
+        <p className="text-[11px] font-semibold text-slate-900">{name}</p>
         <p className="text-[10px] text-amber-500">⭐ {rating}</p>
       </div>
     </div>
