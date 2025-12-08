@@ -390,6 +390,50 @@ export default function HomePage() {
           </div>
         </section>
 
+ {/* SEO JSON-LD schema for AiroFix */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HomeAndConstructionBusiness",
+              name: "AiroFix AC & Electrician Services",
+              url: "https://airofix.com",
+              logo: "https://airofix.com/og-airofix.png",
+              image: "https://airofix.com/og-airofix.png",
+              description:
+                "AiroFix provides professional AC servicing, AC repair, electrician services, wiring, switchboard repair, fan installation, and home electrical work across Delhi NCR.",
+              telephone: "+918851543700",
+              areaServed: [
+                "Delhi",
+                "Noida",
+                "Gurgaon",
+                "Ghaziabad",
+                "Faridabad"
+              ],
+              openingHours: "Mo-Su 10:00-18:00",
+              priceRange: "₹₹",
+              serviceType: [
+                "AC Service",
+                "AC Repair",
+                "AC Installation",
+                "AC Gas Refill",
+                "Electrician Service",
+                "Electrical Wiring",
+                "Switchboard Repair",
+                "Fan Installation",
+                "Light Fitting",
+                "MCB & Fuse Repair"
+              ],
+              sameAs: [
+                "https://facebook.com/airofix",
+                "https://instagram.com/airofix"
+              ]
+            }),
+          }}
+        />
+      </main>
+
         {/* FINAL CTA */}
         <section className="max-w-6xl mx-auto px-4 pb-7">
           <div
