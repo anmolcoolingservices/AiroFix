@@ -1,62 +1,62 @@
-export const metadata = {
-  metadataBase: new URL("https://airofix.com"),
+// app/layout.tsx
+import "./globals.css";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
+const siteUrl = "https://airofix.com";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "AiroFix – AC & Electrician Services in Delhi NCR",
     template: "%s | AiroFix",
   },
-
   description:
-    "AiroFix offers expert AC service, AC repair, electrician solutions, wiring, switchboard repair, fan installation, light fitting and home electrical services. Trusted technicians across Delhi NCR.",
-
+    "AiroFix provides premium AC service, repair, installation and electrician services across Delhi NCR. Slot-based booking, verified technicians and clear Urban Company style rate card – all from your mobile browser.",
   keywords: [
-    "AC service",
-    "AC repair",
+    "AiroFix",
+    "AC service Delhi",
+    "AC repair Dwarka",
     "AC installation",
-    "AC gas refill",
     "electrician near me",
-    "switchboard repair",
-    "fan installation",
-    "MCB repair",
-    "light installation",
-    "home electrician",
-    "AiroFix services",
-    "AC servicing Delhi NCR",
     "electrician Delhi NCR",
+    "split AC service",
+    "window AC service",
   ],
-
   openGraph: {
-    title: "AiroFix – AC Repair & Electrician Services",
-    description:
-      "Expert AC service & repair, electrician work, wiring, switchboard repair, fan & light installation. Fast booking & professional technicians.",
-    url: "https://airofix.com",
-    siteName: "AiroFix",
-    locale: "en_IN",
     type: "website",
+    url: siteUrl,
+    title: "AiroFix – AC & Electrician Services in Delhi NCR",
+    description:
+      "Book AC & electrician services in seconds. Slot-based booking, verified technicians and transparent pricing – AiroFix for Delhi NCR homes and offices.",
+    siteName: "AiroFix",
     images: [
       {
-        url: "/og-airofix.jpg",
+        url: "/og/airofix-home-v1.png", // jo bhi aapne OG banner path rakha hai
         width: 1200,
         height: 630,
-        alt: "AiroFix AC & Electrician Services",
+        alt: "AiroFix – AC & Electrician Services · Delhi NCR",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "AiroFix – AC Repair & Electrician Services",
+    title: "AiroFix – AC & Electrician Services in Delhi NCR",
     description:
-      "AC repair, electrician work, wiring, installations — all available instantly with trusted technicians.",
-    images: ["/og-airofix.jpg"],
+      "Book AC & electrician services with AiroFix. Quick slot-based booking, transparent prices and verified technicians.",
+    images: ["/og/airofix-home-v1.png"],
   },
-
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-
   alternates: {
-    canonical: "https://airofix.com",
+    canonical: siteUrl,
   },
 };
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="bg-slate-100 text-slate-900">
+        {children}
+      </body>
+    </html>
+  );
+}
