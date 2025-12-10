@@ -85,9 +85,10 @@ export default function HomePage() {
                 </p>
               </div>
 
+              {/* CTA row + My Booking link */}
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="/book"
+                  href="/my-bookings"
                   className="inline-flex items-center justify-center rounded-2xl px-4 py-2.5 text-sm font-semibold text-slate-950 bg-white shadow-lg shadow-blue-500/30 active:scale-[0.97] transition"
                 >
                   🚀 Book AC / Electrician
@@ -97,6 +98,13 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center rounded-2xl px-3 py-2 text-[11px] font-semibold border border-white/25 bg-white/5 hover:bg-white/10 transition"
                 >
                   📋 Sample rate card
+                </Link>
+                {/* NEW: My booking / check status link */}
+                <Link
+                  href="/booking/track"
+                  className="inline-flex items-center justify-center rounded-2xl px-3 py-2 text-[11px] font-semibold border border-white/25 bg-white/0 hover:bg-white/10 transition"
+                >
+                  🔎 Check my booking
                 </Link>
               </div>
 
@@ -377,7 +385,7 @@ export default function HomePage() {
               />
               <FAQItem
                 q="Kya service warranty milta hai?"
-                a="Kaafi services par limited period workmanship warranty hoti hai (7–15 days). Ye service type & issue ke hisaab se decide hota hai."
+                a="Kaafi services par limited period workmanship warranty hoti hai (7–15 days). Ye service type & issue ke hisaab se decide hotta hai."
               />
               <FAQItem
                 q="App ke bina bhi booking ho jayegi?"
@@ -424,6 +432,12 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
+      {/* COPYRIGHT FOOTER */}
+      <footer className="px-4 pt-1 pb-2 text-center text-[10px] text-slate-400">
+        © {new Date().getFullYear()} AiroFix Services · A unit of Parth
+        Enterprises
+      </footer>
 
       {/* FLOATING WHATSAPP */}
       <a
