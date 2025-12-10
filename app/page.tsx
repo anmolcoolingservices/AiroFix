@@ -441,7 +441,7 @@ export default function HomePage() {
 
       {/* FLOATING WHATSAPP */}
       <a
-        href="https://wa.me/917289026947"
+        href="https://wa.me/918851543700"
         target="_blank"
         className="fixed bottom-16 right-4 z-30 h-11 w-11 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center text-white text-xl active:scale-95 transition"
         aria-label="Chat on WhatsApp"
@@ -450,7 +450,7 @@ export default function HomePage() {
       </a>
 
       {/* BOTTOM NAV – only customer tabs */}
-      <nav className="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(15,23,42,0.08)]">
+      {/* <nav className="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(15,23,42,0.08)]">
         <div className="max-w-md mx-auto flex items-center justify-around py-1.5 text-[11px]">
           <Link
             href="/"
@@ -467,7 +467,7 @@ export default function HomePage() {
             <span>Book</span>
           </Link>
         </div>
-      </nav>
+      </nav> */}
 
       {/* HIDDEN ADMIN LINK – sirf desktop, low opacity */}
       <div className="hidden md:block text-[9px] text-center text-slate-400 pb-1 pt-1">
